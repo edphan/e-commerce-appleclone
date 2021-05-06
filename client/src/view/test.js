@@ -5,7 +5,7 @@ function Test() {
 	const [state, setState] = useState('');
 	useEffect(() => {
 		const fetchUser = async () => {
-			const response = await fetch('http://localhost:5000/test', { credentials: 'include' });
+			const response = await fetch('/test', { credentials: 'include' });
 			const json = await response.json();
 			setState(json);
 		};
