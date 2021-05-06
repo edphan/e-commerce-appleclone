@@ -30,9 +30,6 @@ function Nav() {
 				<a className='nav-profile' href='/profile'>
 					<img src={profile} alt='' />
 				</a>
-				<a className='nav-search' href='/login'>
-					Login
-				</a>
 				<a className='nav-bag' href='/bag'>
 					<img src={bag} alt='' />
 				</a>
