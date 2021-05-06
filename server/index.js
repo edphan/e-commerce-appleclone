@@ -4,7 +4,14 @@ const cookieParser = require('cookie-parser');
 const productsRouter = require('./routes/products');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const macRouter = require('./routes/mac');
+const iphoneRouter = require('./routes/iphone');
+const ipadRouter = require('./routes/ipad');
+const othersRouter = require('./routes/others');
 const testRouter = require('./routes/test');
+const logoutRouter = require('./routes/logout');
+const profileRouter = require('./routes/profile');
+const userRouter = require('./routes/user');
 require('dotenv').config();
 require('./config/passport');
 
@@ -21,6 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/products', productsRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
+app.use('/mac', macRouter);
+app.use('/iphone', iphoneRouter);
+app.use('/ipad', ipadRouter);
+app.use('others', othersRouter);
+app.use('/profile', profileRouter);
+app.use('/user', userRouter);
 app.use('/test', testRouter);
 
 app.listen(PORT, () => {

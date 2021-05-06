@@ -6,6 +6,8 @@ import Login from '../view/login';
 import Register from '../view/register';
 import Nav from '../components/nav';
 import Test from '../view/test';
+import Subcategory from '../components/subcategory/subcategory';
+import Profile from '../view/profile';
 
 function App() {
 	return (
@@ -16,7 +18,9 @@ function App() {
 					<Route path='/' exact component={Home} />
 					<Route path='/login' exact component={Login} />
 					<Route path='/register' exact component={Register} />
+					<Route path='/profile' exact component={Profile} />
 					<Route path='/test' exact component={Test} />
+					<Route path='/:category/:subcategory' component={Subcategory} />
 				</Switch>
 			</div>
 		</Router>

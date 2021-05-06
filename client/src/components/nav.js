@@ -27,7 +27,7 @@ function Nav() {
 				<a className='nav-search' href='/'>
 					<img src={search} alt='' />
 				</a>
-				<a className='nav-profile' href='/dashboard'>
+				<a className='nav-profile' href='/profile'>
 					<img src={profile} alt='' />
 				</a>
 				<a className='nav-search' href='/login'>
