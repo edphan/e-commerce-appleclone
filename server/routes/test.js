@@ -13,8 +13,8 @@ testRouter.get('/getuser', async (req, res, next) => {
 	});
 });
 
-testRouter.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-	res.json({ message: `YOU ARE AUTHORIZED TO VIEW THIS PAGE` });
+testRouter.get('/', (req, res) => {
+	res.json('hello world');
 });
 
 module.exports = testRouter;

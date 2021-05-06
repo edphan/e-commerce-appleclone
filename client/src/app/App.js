@@ -5,6 +5,7 @@ import Home from '../view/home';
 import Login from '../view/login';
 import Register from '../view/register';
 import Nav from '../components/nav';
+import Test from '../view/test';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route path='/' exact component={Home} />
 					<Route path='/login' exact component={Login} />
 					<Route path='/register' exact component={Register} />
+					<Route path='/test' exact component={Test} />
 				</Switch>
 			</div>
 		</Router>

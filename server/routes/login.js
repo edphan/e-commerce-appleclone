@@ -21,7 +21,11 @@ loginRouter.post('/', passport.authenticate('local', { session: false, failureRe
 		maxAge: 3600000,
 		httpOnly: true,
 	});
-	res.status(200).redirect('/dashboard');
+	res.status(200).redirect('/');
+});
+
+loginRouter.get('/', (req, res) => {
+	res.json({ message: 'get login' });
 });
 
 // //login using passport local strategy WITH session
