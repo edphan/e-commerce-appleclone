@@ -4,11 +4,13 @@ import './App.css';
 import Home from '../view/home';
 import Login from '../view/login';
 import Register from '../view/register';
+import Nav from '../components/nav';
 
 function App() {
 	return (
 		<Router>
 			<div className='App'>
+				<Nav />
 				<Switch>
 					<Route path='/' exact component={Home} />
 					<Route path='/login' exact component={Login} />
