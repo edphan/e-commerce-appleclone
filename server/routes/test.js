@@ -14,7 +14,11 @@ testRouter.get('/getuser', async (req, res, next) => {
 });
 
 testRouter.get('/', (req, res) => {
-	res.json('hello world');
+	res.redirect('/login');
+});
+
+testRouter.post('/', (req, res) => {
+	res.redirect('/login');
 });
 
 module.exports = testRouter;

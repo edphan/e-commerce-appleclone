@@ -9,13 +9,13 @@ function Login() {
 			<div className='form-container'>
 				<form method='POST' action='/login'>
 					<div>
-						<label for='email'>
+						<label htmlFor='email'>
 							<span className='visually-hidden'>Email</span>
 						</label>
 						<input type='email' id='email' name='email' placeholder='Email' required />
 					</div>
 					<div>
-						<label for='password'>
+						<label htmlFor='password'>
 							<span className='visually-hidden'>Password</span>
 						</label>
 						<input type='password' id='password' name='password' placeholder='Password' required />
