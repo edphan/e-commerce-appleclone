@@ -13,7 +13,7 @@ const checkCookie = (req, res, next) => {
 
 // get user profile
 profileRouter.get('/', checkCookie, passport.authenticate('jwt', { session: false }), (req, res) => {
-	const { id, name, email } = req.body;
+	const { id, name, email } = req.user;
 	res.send({ id: id, name: name, email: email });
 });
 

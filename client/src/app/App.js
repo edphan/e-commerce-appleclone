@@ -8,6 +8,7 @@ import Nav from '../components/nav';
 import Test from '../view/test';
 import Subcategory from '../components/subcategory/subcategory';
 import Profile from '../view/profile';
+import Logout from '../components/logout';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route path='/' exact component={Home} />
 					<Route path='/login' exact component={Login} />
 					<Route path='/register' exact component={Register} />
+					<Route path='/logout' exact component={Logout} />
 					<Route path='/profile' exact component={Profile} />
 					<Route path='/test' exact component={Test} />
 					<Route path='/:category/:subcategory' component={Subcategory} />
