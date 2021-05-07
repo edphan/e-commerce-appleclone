@@ -8,7 +8,7 @@ function Profile() {
 	const [isLoggedIn, setIsLoggedIn] = useState('');
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [profile, setProfile] = useState('');
-	const { id, name, email } = profile;
+	const { name, email } = profile;
 	const [address, setAddress] = useState('');
 	const { number, street_name, apt_unit, city, state, country } = address;
 	const [orders, setOrders] = useState('');

@@ -9,6 +9,7 @@ import Test from '../view/test';
 import Subcategory from '../components/subcategory/subcategory';
 import Profile from '../view/profile';
 import Logout from '../components/logout';
+import Bag from '../view/bag';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path='/logout' exact component={Logout} />
 					<Route path='/profile' exact component={Profile} />
 					<Route path='/test' exact component={Test} />
+					<Route path='/bag' exact component={Bag} />
 					<Route path='/:category/:subcategory' component={Subcategory} />
 				</Switch>
 			</div>

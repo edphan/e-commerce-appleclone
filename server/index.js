@@ -11,6 +11,7 @@ const othersRouter = require('./routes/others');
 const testRouter = require('./routes/test');
 const logoutRouter = require('./routes/logout');
 const profileRouter = require('./routes/profile');
+const orderRouter = require('./routes/order');
 require('dotenv').config();
 require('./config/passport');
 
@@ -31,8 +32,9 @@ app.use('/logout', logoutRouter);
 app.use('/mac', macRouter);
 app.use('/iphone', iphoneRouter);
 app.use('/ipad', ipadRouter);
-app.use('others', othersRouter);
+app.use('/others', othersRouter);
 app.use('/profile', profileRouter);
+app.use('/order', orderRouter);
 app.use('/test', testRouter);
 
 app.listen(PORT, () => {
