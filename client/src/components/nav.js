@@ -4,6 +4,7 @@ import logo from '../icon/apple-grey.png';
 import bag from '../icon/shopping-bag.png';
 import profile from '../icon/profile.png';
 import search from '../icon/search.png';
+import github from '../icon/github.png';
 
 function Nav() {
 	return (
@@ -32,6 +33,9 @@ function Nav() {
 				</a>
 				<a className='nav-bag' href='/bag'>
 					<img src={bag} alt='' />
+				</a>
+				<a className='nav-bag' href='https://github.com/edphan'>
+					<img src={github} alt='' />
 				</a>
 				{/* <LogoutButton /> */}
 			</div>

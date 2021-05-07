@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { clearBag, selectBag } from '../components/bag/bagSlice';
+import { selectBag } from '../components/bag/bagSlice';
 import ProductsInBag from '../components/bag/productsInBag';
 
 function Bag() {
