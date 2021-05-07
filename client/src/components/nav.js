@@ -25,9 +25,9 @@ function Nav() {
 				<a className='nav-others' href='/others'>
 					Others
 				</a> */}
-				<a className='nav-search' href='/'>
+				{/* <a className='nav-search' href='/'>
 					<img src={search} alt='' />
-				</a>
+				</a> */}
 				<a className='nav-profile' href='/profile'>
 					<img src={profile} alt='' />
 				</a>
