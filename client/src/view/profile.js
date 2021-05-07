@@ -48,7 +48,8 @@ function Profile() {
 		// get unique order_id
 		let arrayOfOrderId = [];
 		orders.forEach((order) => arrayOfOrderId.push(order.order_id));
-		let uniqueOrderId = [...new Set(arrayOfOrderId)]; //a n array that holds the unique order IDs
+		let uniqueOrderId = [...new Set(arrayOfOrderId)]; //an array that holds the unique order IDs
+		uniqueOrderId.sort((a, b) => b - a);
 
 		// sorted orders: order details are grouped by their order_id
 		let sortedOrders = [];
@@ -62,15 +63,15 @@ function Profile() {
 					<h3>User Info</h3>
 					<p>Name: {name}</p>
 					<p>Email: {email}</p>
-					<button>change password</button>
+					<div>
+						<Logout />
+					</div>
 				</div>
-				<Logout />
 				<div className='dashboard-address'>
 					<h3>Address</h3>
 					<p>
 						{number} {street_name} {apt_unit} {city}, {state}, {country}
 					</p>
-					<button>change address</button>
 				</div>
 				<div className='dashboard-orders'>
 					<h3>Orders</h3>

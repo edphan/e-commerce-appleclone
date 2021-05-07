@@ -29,11 +29,15 @@ const bagSlice = createSlice({
 			const index = state.findIndex((product) => product.productInfo.id === action.payload.productInfo.id);
 			state[index].quantity -= 1;
 		},
+
+		clearBag: (state, action) => {
+			state = [];
+		},
 	},
 });
 
 export const selectBag = (state) => state.bag;
 
-export const { addToBag, removeProduct, addQuantity, subtractQuantity } = bagSlice.actions;
+export const { addToBag, removeProduct, addQuantity, subtractQuantity, clearBag } = bagSlice.actions;
 
 export default bagSlice.reducer;

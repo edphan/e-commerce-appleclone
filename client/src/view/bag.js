@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectBag } from '../components/bag/bagSlice';
+import { clearBag, selectBag } from '../components/bag/bagSlice';
 import ProductsInBag from '../components/bag/productsInBag';
 
 function Bag() {
@@ -35,32 +35,6 @@ function Bag() {
 		}
 	};
 
-	// const getOrderId = async () => {
-	// 	const getOrderId = await fetch('http://localhost:8080/order/latestorder', { credentials: 'include' });
-	// 	const jsonOrderId = await getOrderId.json();
-	// 	setOrderId(jsonOrderId);
-	// };
-
-	// const postToOrderProducts = async () => {
-	// 	for (let i = 0; i < bag.length; i++) {
-	// 		// eslint-disable-next-line
-	// 		const postToOrderProducts = await fetch('http://localhost:8080/order/postorderdetail', {
-	// 			method: 'post',
-	// 			headers: {
-	// 				'Content-Type': 'application/json',
-	// 			},
-	// 			body: JSON.stringify({
-	// 				order_id: parseInt(orderId, 10),
-	// 				product_id: bag[i].productInfo.id,
-	// 				quantity: bag[i].quantity,
-	// 				product_name: bag[i].productInfo.name,
-	// 				product_image: bag[i].productInfo.image,
-	// 			}),
-	// 			credentials: 'include',
-	// 		});
-	// 	}
-	// };
-
 	return (
 		<div className='bag-summary-container'>
 			<div className='bag-amount-checkout-button'>
@@ -69,8 +43,6 @@ function Bag() {
 					type='submit'
 					onClick={async () => {
 						postOrderGetOrderId();
-						// getOrderId();
-						// postToOrderProducts();
 					}}>
 					Check out
 				</button>

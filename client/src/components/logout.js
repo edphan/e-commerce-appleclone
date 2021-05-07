@@ -14,7 +14,7 @@ function Logout() {
 		return <Redirect to='/' />;
 	} else {
 		return (
-			<div>
+			<div className='dashboard-logout-button'>
 				<button onClick={handleClick}>log out</button>
 			</div>
 		);

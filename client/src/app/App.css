@@ -386,6 +386,7 @@ code {
 	display: grid;
 	grid-template-columns: auto 950px auto;
 	margin-top: 70px;
+	margin-bottom: 50px;
 }
 
 .dashboard-user-info {
@@ -396,7 +397,7 @@ code {
 	margin-bottom: 20px;
 }
 
-.dashboard-user-info button {
+.dashboard-logout-button button {
 	background-color: #0071e3;
 	border-radius: 12px;
 	color: #fff;
@@ -408,6 +409,14 @@ code {
 	width: 200px;
 	height: 55px;
 	border: 0px solid #e9e9ec;
+}
+
+.dashboard-logout-button button:hover {
+	background-color: #2881da;
+}
+
+.dashboard-logout-button button:active {
+	background-color: #0071e3;
 }
 
 .dashboard-address {
