@@ -8,35 +8,35 @@ function Register() {
 			<div className='form-container'>
 				<form method='POST' action='/register'>
 					<div>
-						<label for='name'>
+						<label htmlFor='name'>
 							<span className='visually-hidden'>Name</span>
 						</label>
 						<input type='text' id='name' name='name' placeholder='Name' required />
 					</div>
 
 					<div>
-						<label for='dob'>
+						<label htmlFor='dob'>
 							<span className='visually-hidden'>Date of birth</span>
 						</label>
 						<input type='date' id='dob' name='dob' placeholder='Date of birth' />
 					</div>
 
 					<div>
-						<label for='email'>
+						<label htmlFor='email'>
 							<span className='visually-hidden'>Email</span>
 						</label>
 						<input type='email' id='email' name='email' placeholder='Email' required />
 					</div>
 
 					<div>
-						<label for='password'>
+						<label htmlFor='password'>
 							<span className='visually-hidden'>Password</span>
 						</label>
 						<input type='password' id='password' name='password' placeholder='Password' required />
 					</div>
 
 					<div>
-						<label for='password2'>
+						<label htmlFor='password2'>
 							<span className='visually-hidden'>Password</span>
 						</label>
 						<input type='password' id='password2' name='password2' placeholder='Confirm password' required />

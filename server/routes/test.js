@@ -14,7 +14,7 @@ testRouter.get('/getuser', async (req, res, next) => {
 });
 
 testRouter.get('/', (req, res) => {
-	res.redirect('/login');
+	res.send('YAY');
 });
 
 testRouter.post('/', (req, res) => {
