@@ -1,4 +1,4 @@
-CREATE TABLE users (
+/*CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   dob DATE,
@@ -156,7 +156,7 @@ VALUES(4, 5, 2, 'Mac Pro', 'https://store.storeimages.cdn-apple.com/4982/as-imag
 INSERT INTO order_products(order_id, product_id, quantity, product_name, product_image)
 VALUES(4, 22, 4, 'MacBook Pro 16"', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-segment-2019?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1573580916135');
 
-
+*/
 
 
 
