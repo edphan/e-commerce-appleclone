@@ -4,12 +4,12 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "react-scripts start",
-		"start": "serve -s build",
-		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject",
-		"heroku-postbuild": "npm run build"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev-build": "webpack -w --mode=development",
+		"prod-build": "webpack",
+		"dev-start": "nodemon server/index.js",
+		"start": "node server/index.js",
+		"heroku-postbuild": "webpack"
 	},
 	"keywords": [],
 	"author": "",
