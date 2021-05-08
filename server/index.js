@@ -19,7 +19,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //MIDDLEWARE
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
+app.use(cors({ credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 app.use(cookieParser()); //to parse cookie
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
