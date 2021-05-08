@@ -26,3 +26,5 @@ yarn-error.log*
 
 .env
 node_modules
+
+init.sql
