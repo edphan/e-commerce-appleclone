@@ -19,8 +19,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //MIDDLEWARE
-app.use(express.static(__dirname + '../client/public'));
-app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(__dirname + '/../client/public'));
+}
+
+console.log(__dirname + '/../client/public');
+
+app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 app.use(cookieParser()); //to parse cookie
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
