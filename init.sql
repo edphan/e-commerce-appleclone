@@ -6,7 +6,7 @@ CREATE TABLE users (
   password VARCHAR(200)
 );
 
-CREATE TABLE address (
+CREATE TABLE addresses (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   number INTEGER,
