@@ -20,10 +20,8 @@ const PORT = process.env.PORT || 5000;
 
 //MIDDLEWARE
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(__dirname + '/../client/public'));
+	app.use(express.static(__dirname + '/../client/build'));
 }
-
-console.log(__dirname + '/../client/public');
 
 app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 app.use(cookieParser()); //to parse cookie
