@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const productsRouter = require('./routes/products');
@@ -40,6 +41,10 @@ app.use('/others', othersRouter);
 app.use('/profile', profileRouter);
 app.use('/order', orderRouter);
 app.use('/test', testRouter);
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+});
 
 app.listen(PORT, () => {
 	console.log(`sever is listening on PORT ${PORT}`);
