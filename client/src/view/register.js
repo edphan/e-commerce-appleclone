@@ -15,13 +15,6 @@ function Register() {
 					</div>
 
 					<div>
-						<label htmlFor='dob'>
-							<span className='visually-hidden'>Date of birth</span>
-						</label>
-						<input type='date' id='dob' name='dob' placeholder='Date of birth' />
-					</div>
-
-					<div>
 						<label htmlFor='email'>
 							<span className='visually-hidden'>Email</span>
 						</label>
