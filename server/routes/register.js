@@ -4,20 +4,19 @@ const bcrypt = require('bcryptjs');
 const registerRouter = express.Router();
 
 registerRouter.post('/', async (req, res) => {
-	const { name, dob, email, password, password2 } = req.body;
+	const { name, email, password, password2 } = req.body;
 
 	// check if any field is missing
-	if (!name || !dob || !email || !password || !password2) {
-		console.log('Please enter all fields');
-		console.log(dob);
+	if (!name || !email || !password || !password2) {
+		res.json({ message: 'Please enter all fields' });
 	}
 	// check if password and password2 are identical
 	if (password !== password2) {
-		console.log('Passwords do not match');
+		res.json({ message: 'Passwords do not match' });
 	}
 	// check password length
 	if (password.length <= 6) {
-		console.log('Password should be more than 6 characters');
+		res.json({ message: 'Password should be more than 6 characters' });
 	}
 
 	const hashedPassword = await bcrypt.hash(password, 10); //hash password to store in database
@@ -27,14 +26,12 @@ registerRouter.post('/', async (req, res) => {
 			throw err;
 		}
 		if (results.rows.length > 0) {
-			console.log(`Email already registered`);
+			res.json({ message: 'Email already registered' });
 		} else {
 			pool.query(`INSERT INTO users (name, dob, email, password) VALUES ($1, $2, $3, $4)`, [name, dob, email, hashedPassword], (err, results) => {
 				if (err) {
 					throw err;
 				}
-				console.log(dob);
-				console.log(`users has successfully registered`);
 				res.status(201).redirect('/');
 			});
 		}
