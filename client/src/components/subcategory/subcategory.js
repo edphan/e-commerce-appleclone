@@ -12,10 +12,10 @@ function Subcategory({ match }) {
 	const subcategoryNoSpace = subcategory.replace(/\s/g, '').toLowerCase();
 
 	useEffect(() => {
-		dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
-	}, [match.params, dispatch, match]);
-
-	//[dispatch, category, subcategoryNoSpace]
+		if (products[0].subcategory !== subcategory) {
+			dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
+		}
+	}, [dispatch, category, subcategoryNoSpace, products, subcategory]);
 
 	// filter out the subcategory from all products
 	const filteredProducts = products.filter((product) => product.subcategory === subcategory);
