@@ -1,3 +1,4 @@
+import e from 'express';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SubcategoryProduct from './subcategoryProducts';
@@ -13,6 +14,8 @@ function Subcategory({ match }) {
 
 	useEffect(() => {
 		if (products[0].subcategory !== subcategory) {
+			dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
+		} else {
 			dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
 		}
 	}, [dispatch, category, subcategoryNoSpace, products, subcategory]);
