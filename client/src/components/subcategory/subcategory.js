@@ -13,7 +13,7 @@ function Subcategory({ match }) {
 
 	useEffect(() => {
 		dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
-	}, []);
+	}, [category]);
 
 	//[dispatch, category, subcategoryNoSpace]
 
