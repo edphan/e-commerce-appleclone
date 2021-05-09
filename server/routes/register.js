@@ -35,7 +35,7 @@ registerRouter.post('/', async (req, res) => {
 				}
 				console.log(dob);
 				console.log(`users has successfully registered`);
-				res.status(201).redirect('/login');
+				res.status(201).redirect('/');
 			});
 		}
 	});
