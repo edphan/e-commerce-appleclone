@@ -13,13 +13,13 @@ const checkCookie = (req, res, next) => {
 };
 
 // get user profile
-profileRouter.get('/getuser', checkCookie, passport.authenticate('jwt', { session: false }), (req, res) => {
+profileRouter.get('/getuser', checkCookie, passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
 	const { id, name, email } = req.user;
 	res.send({ id: id, name: name, email: email });
 });
 
 //get address
-profileRouter.get('/getaddress', passport.authenticate('jwt', { session: false }), (req, res) => {
+profileRouter.get('/getaddress', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
 	const { id } = req.user;
 	pool.query(`SELECT * FROM addresses WHERE user_id = $1`, [id], (err, result) => {
 		if (err) {
@@ -31,7 +31,7 @@ profileRouter.get('/getaddress', passport.authenticate('jwt', { session: false }
 });
 
 //get orders
-profileRouter.get('/getorders', passport.authenticate('jwt', { session: false }), (req, res) => {
+profileRouter.get('/getorders', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
 	const { id } = req.user;
 	pool.query(`SELECT * FROM orders JOIN order_products ON orders.id = order_products.order_id WHERE user_id = $1`, [id], (err, result) => {
 		if (err) {
