@@ -1,4 +1,3 @@
-import e from 'express';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SubcategoryProduct from './subcategoryProducts';
@@ -13,12 +12,8 @@ function Subcategory({ match }) {
 	const subcategoryNoSpace = subcategory.replace(/\s/g, '').toLowerCase();
 
 	useEffect(() => {
-		if (products[0].subcategory !== subcategory) {
-			dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
-		} else {
-			dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
-		}
-	}, [dispatch, category, subcategoryNoSpace, products, subcategory]);
+		dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
+	}, [dispatch, category, subcategoryNoSpace]);
 
 	// filter out the subcategory from all products
 	const filteredProducts = products.filter((product) => product.subcategory === subcategory);
