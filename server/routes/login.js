@@ -24,9 +24,9 @@ loginRouter.post('/', passport.authenticate('local', { session: false, failureRe
 	res.status(200).redirect('/');
 });
 
-loginRouter.get('/', (req, res) => {
-	res.json({ message: 'get login' });
-});
+// loginRouter.get('/', (req, res) => {
+// 	res.json({ message: 'get login' });
+// });
 
 // //login using passport local strategy WITH session
 // loginRouter.post('/', passport.authenticate('local', { failureRedirect: '/login', successRedirect: '/' }), (req, res) => {

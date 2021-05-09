@@ -13,15 +13,17 @@ function Subcategory({ match }) {
 
 	useEffect(() => {
 		dispatch(loadSubcategory({ category: category, subcategory: subcategoryNoSpace }));
-	}, [dispatch, category, subcategoryNoSpace]);
+	}, []);
+
+	//[dispatch, category, subcategoryNoSpace]
 
 	// filter out the subcategory from all products
 	const filteredProducts = products.filter((product) => product.subcategory === subcategory);
 
 	// map over the subcategory to render out the products from that subcategory
-	return (
-		<div className='product-page-container'>
-			{isLoaded && (
+	if (isLoaded) {
+		return (
+			<div className='product-page-container'>
 				<div className='subcategory-page'>
 					<h2>{subcategory}</h2>
 					<p>{filteredProducts[0].description}</p>
@@ -33,11 +35,16 @@ function Subcategory({ match }) {
 							</div>
 						))}
 					</div>
-					{/* <form className='subcategory-form-button'></form> */}
 				</div>
-			)}
-		</div>
-	);
+			</div>
+		);
+	} else {
+		return (
+			<div>
+				<p>loading...</p>
+			</div>
+		);
+	}
 }
 
 export default Subcategory;
