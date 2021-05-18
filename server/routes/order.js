@@ -37,7 +37,7 @@ orderRouter.post('/postorderdetail', passport.authenticate('jwt', { session: fal
 			if (err) {
 				throw err;
 			}
-			res.redirect('/');
+			res.redirect('/profile');
 		}
 	);
 });
