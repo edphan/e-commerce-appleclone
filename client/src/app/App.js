@@ -5,7 +5,6 @@ import Home from '../view/home';
 import Login from '../view/login';
 import Register from '../view/register';
 import Nav from '../components/nav';
-import Test from '../view/test';
 import Subcategory from '../components/subcategory/subcategory';
 import Profile from '../view/profile';
 import Logout from '../components/logout';
@@ -22,10 +21,8 @@ function App() {
 					<Route path='/register' exact component={Register} />
 					<Route path='/logout' exact component={Logout} />
 					<Route path='/profile' exact component={Profile} />
-					<Route path='/test' exact component={Test} />
 					<Route path='/bag' exact component={Bag} />
 					<Route path='/:category/:subcategory' component={Subcategory} />
-					<Route path='/testing' exact component={Test} />
 				</Switch>
 			</div>
 		</Router>

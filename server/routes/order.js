@@ -42,4 +42,12 @@ orderRouter.post('/postorderdetail', passport.authenticate('jwt', { session: fal
 	);
 });
 
+orderRouter.post('/removeOrder', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
+	const { order_id } = req.body;
+	console.log(order_id);
+	pool.query(`DELETE FROM order_products WHERE order_id = $1`, [order_id], (err, result) => {});
+	pool.query(`DELETE FROM orders WHERE order = $1`, [order_id], (err, result) => {});
+	res.sendStatus(200);
+});
+
 module.exports = orderRouter;

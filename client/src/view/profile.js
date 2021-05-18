@@ -57,6 +57,23 @@ function Profile() {
 			sortedOrders.push(orders.filter((order) => order.order_id === uniqueOrderId[i]));
 		}
 
+		const removeOrder = async (orderId) => {
+			try {
+				const response = await fetch('/order/removeOrder', {
+					method: 'post',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						order_id: orderId,
+					}),
+					credentials: 'include',
+				});
+			} catch (err) {
+				console.log(err);
+			}
+		};
+
 		return (
 			<div className='dashboard-container'>
 				<div className='dashboard-user-info'>
@@ -78,6 +95,7 @@ function Profile() {
 					{sortedOrders.map((order) => (
 						<div>
 							<Order order={order} />
+							<button onClick={async () => removeOrder(order[0].order_id)}>remove order</button>
 						</div>
 					))}
 				</div>
