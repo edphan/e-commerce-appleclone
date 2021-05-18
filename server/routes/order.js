@@ -3,8 +3,17 @@ const orderRouter = express.Router();
 const passport = require('passport');
 const pool = require('../db/index');
 
+// middleware to check if there is a cookie
+const checkCookie = (req, res, next) => {
+	if (req.cookies['token']) {
+		next();
+	} else {
+		res.send(false);
+	}
+};
+
 //post order to orders table
-orderRouter.post('/placeorder', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
+orderRouter.post('/placeorder', checkCookie, passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
 	const { id } = req.user;
 	pool.query(`INSERT INTO orders (user_id) VALUES ($1)`, [id], (err, results) => {
 		pool.query(`SELECT MAX(id) FROM orders WHERE user_id = $1`, [id], (err, resultMax) => {
