@@ -9,6 +9,7 @@ const axios = require('axios');
 function Bag() {
 	const dispatch = useDispatch();
 	const [isLoggedIn, setIsLoggedIn] = useState('');
+	const [isOrderPosted, setIsOrderPosted] = useState('');
 	const bag = useSelector(selectBag);
 
 	let sumOfBag = 0;
@@ -40,6 +41,8 @@ function Bag() {
 						}),
 						credentials: 'include',
 					});
+					const response = await postToOrderProducts.json();
+					setIsOrderPosted(response);
 				}
 				dispatch(clearBag());
 			}
@@ -52,6 +55,12 @@ function Bag() {
 		return (
 			<div>
 				<Redirect to='/login' />
+			</div>
+		);
+	} else if (isOrderPosted) {
+		return (
+			<div>
+				<Redirect to='/profile' />
 			</div>
 		);
 	} else {
