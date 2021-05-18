@@ -33,11 +33,6 @@
 	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	/* display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 310px;
-	grid-auto-rows: 310px;
-	grid-auto-flow: row; */
 	grid-gap: 15px;
 }
 
@@ -45,7 +40,7 @@
 	border-radius: 18px;
 	background-color: #ffffff;
 	width: 300px;
-	width: 310px;
+	height: 310px;
 }
 
 .product-image img {

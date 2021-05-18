@@ -2,7 +2,7 @@
 
 .product-page-container {
 	display: grid;
-	grid-template-columns: auto 950px auto;
+	grid-template-columns: auto minmax(0, 970px) auto;
 	margin-top: 70px;
 }
 
@@ -12,10 +12,10 @@
 }
 
 .subcategory-page-products-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 310px;
-	grid-auto-rows: 310px;
+	width: 100%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	grid-gap: 15px;
 	margin-bottom: 20px;
 }
@@ -23,10 +23,10 @@
 .subcategory-product-container {
 	border-radius: 18px;
 	background-color: #ffffff;
+	width: 310px;
 }
 
 .subcategory-product {
-	padding: 5px;
 	width: 100%;
 }
 
