@@ -13,8 +13,8 @@ testRouter.get('/getuser', async (req, res, next) => {
 	});
 });
 
-testRouter.get('/', passport.authenticate('jwt', { session: false, failureRedirect: '/login', successRedirect: '/bag' }), (req, res) => {
-	res.send('YAY');
+testRouter.get('/', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
+	res.redirect('/register');
 });
 
 testRouter.post('/', (req, res) => {
