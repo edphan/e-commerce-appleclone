@@ -5,6 +5,7 @@ import profile from '../icon/profile.png';
 import github from '../icon/github.png';
 import { useSelector } from 'react-redux';
 import { selectBag } from './bag/bagSlice';
+import './styles/nav.css';
 
 function Nav() {
 	const productsInBag = useSelector(selectBag);

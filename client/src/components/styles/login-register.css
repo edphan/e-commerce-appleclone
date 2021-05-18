@@ -1,0 +1,51 @@
+/* -------------- REGISTER -------------- */
+
+/* to hide the label */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* -------------- LOGIN AND REGISTER -------------- */
+
+.page-container {
+	display: grid;
+	grid-template-columns: auto minmax(0, 950px) auto;
+}
+
+.page-container h2 {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: start;
+	margin-top: 70px;
+	font-size: 40px;
+	font-weight: 600;
+	padding-left: 15px;
+	padding-left: 15px;
+}
+
+.form-container {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: start;
+	width: 90%;
+	max-width: 408px;
+	padding-left: 15px;
+}
+
+.form-container input {
+	width: 97%;
+	height: 46px;
+	border: 2px solid #e9e9ec;
+	border-radius: 12px;
+	margin-bottom: 15px;
+}
+
+.form-container p {
+	text-align: left;
+}

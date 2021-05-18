@@ -1,0 +1,89 @@
+/* -------------- DASHBOARD -------------- */
+.dashboard-container {
+	display: grid;
+	grid-template-columns: auto 950px auto;
+	margin-top: 70px;
+	margin-bottom: 50px;
+}
+
+.dashboard-user-info {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: start;
+	text-align: start;
+	margin-bottom: 20px;
+}
+
+.dashboard-logout-button button {
+	background-color: #0071e3;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1.17648;
+	font-weight: 400;
+	letter-spacing: -0.022em;
+	text-align: center;
+	width: 200px;
+	height: 55px;
+	border: 0px solid #e9e9ec;
+}
+
+.dashboard-logout-button button:hover {
+	background-color: #2881da;
+}
+
+.dashboard-logout-button button:active {
+	background-color: #0071e3;
+}
+
+.dashboard-address {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: start;
+	text-align: start;
+	margin-bottom: 20px;
+}
+
+.dashboard-address button {
+	background-color: #0071e3;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1.17648;
+	font-weight: 400;
+	letter-spacing: -0.022em;
+	text-align: center;
+	width: 200px;
+	height: 55px;
+	border: 0px solid #e9e9ec;
+}
+
+.dashboard-orders {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-rows: 50px;
+	grid-auto-rows: minmax(310px, auto);
+}
+
+.dashboard-orders h3 {
+	text-align: start;
+}
+
+.order-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border-radius: 18px;
+	border: 2px solid rgb(238, 238, 238);
+}
+
+.order-product {
+	height: 100%;
+}
+
+.order-container img {
+	height: 225px;
+	grid-column-start: 1;
+	grid-column-end: 2;
+}

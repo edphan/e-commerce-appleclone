@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 import Logout from '../components/logout';
 import Order from '../components/order';
+import '../components/styles/dashboard.css';
 const axios = require('axios');
 
 function Profile() {

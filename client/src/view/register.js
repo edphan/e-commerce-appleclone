@@ -1,5 +1,6 @@
 import React from 'react';
 import FormButton from '../components/formButton';
+import '../components/styles/login-register.css';
 
 function Register() {
 	return (

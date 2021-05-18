@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import { selectBag } from '../components/bag/bagSlice';
 import ProductsInBag from '../components/bag/productsInBag';
 import { clearBag } from '../components/bag/bagSlice';
+import '../components/styles/bag.css';
 const axios = require('axios');
 
 function Bag() {
