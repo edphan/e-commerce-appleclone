@@ -27,31 +27,31 @@ function Bag() {
 				const orderId = jsonOrderId.max;
 				for (let i = 0; i < bag.length; i++) {
 					// eslint-disable-next-line
-					const postToOrderProducts = await axios.post('/order/postorderdetail', {
-						headers: { 'Content-Type': 'application/json' },
-						data: {
-							order_id: parseInt(orderId, 10),
-							product_id: bag[i].productInfo.id,
-							quantity: bag[i].quantity,
-							product_name: bag[i].productInfo.name,
-							product_image: bag[i].productInfo.image,
-						},
-						withCredentials: true,
-					});
-					// const postToOrderProducts = await fetch('/order/postorderdetail', {
-					// 	method: 'post',
-					// 	headers: {
-					// 		'Content-Type': 'application/json',
-					// 	},
-					// 	body: JSON.stringify({
+					// const postToOrderProducts = await axios.post('/order/postorderdetail', {
+					// 	headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+					// 	data: {
 					// 		order_id: parseInt(orderId, 10),
 					// 		product_id: bag[i].productInfo.id,
 					// 		quantity: bag[i].quantity,
 					// 		product_name: bag[i].productInfo.name,
 					// 		product_image: bag[i].productInfo.image,
-					// 	}),
-					// 	credentials: 'include',
+					// 	},
+					// 	withCredentials: true,
 					// });
+					const postToOrderProducts = await fetch('/order/postorderdetail', {
+						method: 'post',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							order_id: parseInt(orderId, 10),
+							product_id: bag[i].productInfo.id,
+							quantity: bag[i].quantity,
+							product_name: bag[i].productInfo.name,
+							product_image: bag[i].productInfo.image,
+						}),
+						credentials: 'include',
+					});
 				}
 				dispatch(clearBag());
 			}

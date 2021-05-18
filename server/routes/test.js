@@ -14,10 +14,12 @@ testRouter.get('/getuser', async (req, res, next) => {
 });
 
 testRouter.get('/', passport.authenticate('jwt', { session: false, failureRedirect: '/login' }), (req, res) => {
+	console.log('trying to get');
 	res.redirect('/register');
 });
 
 testRouter.post('/', (req, res) => {
+	console.log('trying to post');
 	res.redirect('/login');
 });
 
