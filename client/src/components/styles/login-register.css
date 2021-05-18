@@ -15,7 +15,7 @@
 
 .page-container {
 	display: grid;
-	grid-template-columns: auto minmax(0, 950px) auto;
+	grid-template-columns: auto minmax(auto, 950px) auto;
 }
 
 .page-container h2 {
