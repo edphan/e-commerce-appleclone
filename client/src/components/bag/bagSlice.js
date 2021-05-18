@@ -31,7 +31,7 @@ const bagSlice = createSlice({
 		},
 
 		clearBag: (state, action) => {
-			state = [];
+			state.splice(0, state.length);
 		},
 	},
 });

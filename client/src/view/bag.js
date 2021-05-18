@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { selectBag } from '../components/bag/bagSlice';
 import ProductsInBag from '../components/bag/productsInBag';
+import { clearBag } from '../components/bag/bagSlice';
 const axios = require('axios');
 
 function Bag() {
+	const dispatch = useDispatch();
 	const [isLoggedIn, setIsLoggedIn] = useState('');
 	const bag = useSelector(selectBag);
 
@@ -40,6 +42,7 @@ function Bag() {
 						credentials: 'include',
 					});
 				}
+				dispatch(clearBag());
 			}
 		} catch (err) {
 			console.log(err);

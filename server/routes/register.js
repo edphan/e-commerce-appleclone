@@ -32,7 +32,7 @@ registerRouter.post('/', async (req, res) => {
 				if (err) {
 					throw err;
 				}
-				res.status(201).redirect('/');
+				res.status(201).redirect('/login');
 			});
 		}
 	});
