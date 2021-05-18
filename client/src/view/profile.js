@@ -60,7 +60,7 @@ function Profile() {
 
 	useEffect(() => {
 		checkLoginAndGetProfile();
-	}, [orderRemoved]);
+	}, [orderRemoved, isLoaded]);
 
 	// if not logged in, redirect to /login
 	if (isLoggedIn === false) {

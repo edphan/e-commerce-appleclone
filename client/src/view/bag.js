@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { selectBag } from '../components/bag/bagSlice';
@@ -26,18 +26,6 @@ function Bag() {
 				const jsonOrderId = getOrderId.data;
 				const orderId = jsonOrderId.max;
 				for (let i = 0; i < bag.length; i++) {
-					// eslint-disable-next-line
-					// const postToOrderProducts = await axios.post('/order/postorderdetail', {
-					// 	headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-					// 	data: {
-					// 		order_id: parseInt(orderId, 10),
-					// 		product_id: bag[i].productInfo.id,
-					// 		quantity: bag[i].quantity,
-					// 		product_name: bag[i].productInfo.name,
-					// 		product_image: bag[i].productInfo.image,
-					// 	},
-					// 	withCredentials: true,
-					// });
 					const postToOrderProducts = await fetch('/order/postorderdetail', {
 						method: 'post',
 						headers: {
@@ -59,6 +47,7 @@ function Bag() {
 			console.log(err);
 		}
 	};
+
 	if (isLoggedIn === false) {
 		return (
 			<div>
