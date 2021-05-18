@@ -18,7 +18,7 @@ function ProductsInBag({ product }) {
 			<div className='bag-one-product-price-quantity'>
 				<p>${sum}</p>
 				<div className='quantity-change'>
-					<button onClick={() => dispatch(subtractQuantity(product))}>-</button>
+					<button onClick={quantity <= 1 ? () => dispatch(removeProduct(id)) : () => dispatch(subtractQuantity(product))}>-</button>
 					<p>{quantity}</p>
 					<button onClick={() => dispatch(addQuantity(product))}>+</button>
 				</div>
