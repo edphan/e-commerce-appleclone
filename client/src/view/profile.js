@@ -12,6 +12,7 @@ function Profile() {
 	const [address, setAddress] = useState('');
 	const { number, street_name, apt_unit, city, state, country } = address;
 	const [orders, setOrders] = useState('');
+	const [orderRemoved, setRemovedOrder] = useState('');
 
 	// function to check login status and to get profile
 	const checkLoginAndGetProfile = async () => {
@@ -32,9 +33,34 @@ function Profile() {
 		}
 	};
 
+	//function to remove a particular order
+	const removeOrder = async (orderId) => {
+		try {
+			const response = await fetch('/order/removeOrder', {
+				method: 'post',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					order_id: orderId,
+				}),
+				credentials: 'include',
+			});
+			const json = await response.json();
+			// if the order was successfully removed, json will be equal to true
+			// then use a random number in setRemovedOrder to set orderRemoved to that random number
+			// this is to re-render the page whenever orderRemoved changes value, to make the removed order disappear from the page
+			if (json) {
+				setRemovedOrder(Math.random() * 9999);
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	useEffect(() => {
 		checkLoginAndGetProfile();
-	}, []);
+	}, [orderRemoved]);
 
 	// if not logged in, redirect to /login
 	if (isLoggedIn === false) {
@@ -56,23 +82,6 @@ function Profile() {
 		for (let i = 0; i < uniqueOrderId.length; i++) {
 			sortedOrders.push(orders.filter((order) => order.order_id === uniqueOrderId[i]));
 		}
-
-		const removeOrder = async (orderId) => {
-			try {
-				const response = await fetch('/order/removeOrder', {
-					method: 'post',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						order_id: orderId,
-					}),
-					credentials: 'include',
-				});
-			} catch (err) {
-				console.log(err);
-			}
-		};
 
 		return (
 			<div className='dashboard-container'>
