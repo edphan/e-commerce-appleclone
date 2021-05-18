@@ -60,6 +60,21 @@ code {
 	height: 55%;
 }
 
+.bag-quantity {
+	border-radius: 50%;
+	height: 25px;
+	width: 25px;
+	border: 2px solid;
+	background-color: #d6d5d8;
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+}
+
+.bag-quantity-zero {
+	visibility: hidden;
+}
+
 .nav-profile {
 	height: 100%;
 	display: flex;
