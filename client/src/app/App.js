@@ -25,7 +25,7 @@ function App() {
 					<Route path='/test' exact component={Test} />
 					<Route path='/bag' exact component={Bag} />
 					<Route path='/:category/:subcategory' component={Subcategory} />
-					<Route path='/test' exact component={Test} />
+					<Route path='/testing' exact component={Test} />
 				</Switch>
 			</div>
 		</Router>
