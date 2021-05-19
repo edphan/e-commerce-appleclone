@@ -96,6 +96,7 @@
 	border-radius: 18px;
 	grid-gap: 15px;
 	border: 2px solid rgb(238, 238, 238);
+	width: 100%;
 }
 
 .order-product {
