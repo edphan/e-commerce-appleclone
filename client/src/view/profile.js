@@ -104,8 +104,10 @@ function Profile() {
 					<h3>Orders</h3>
 					{sortedOrders.map((order) => (
 						<div>
+							<div className='remove-order-button'>
+								<button onClick={async () => removeOrder(order[0].order_id)}>remove order</button>
+							</div>
 							<Order order={order} />
-							<button onClick={async () => removeOrder(order[0].order_id)}>remove order</button>
 						</div>
 					))}
 				</div>

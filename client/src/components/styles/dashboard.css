@@ -1,7 +1,7 @@
 /* -------------- DASHBOARD -------------- */
 .dashboard-container {
 	display: grid;
-	grid-template-columns: auto 950px auto;
+	grid-template-columns: auto minmax(0, 950px) auto;
 	margin-top: 70px;
 	margin-bottom: 50px;
 }
@@ -12,6 +12,7 @@
 	justify-self: start;
 	text-align: start;
 	margin-bottom: 20px;
+	padding-left: 15px;
 }
 
 .dashboard-logout-button button {
@@ -23,7 +24,8 @@
 	font-weight: 400;
 	letter-spacing: -0.022em;
 	text-align: center;
-	width: 200px;
+	width: 100%;
+	max-width: 200px;
 	height: 55px;
 	border: 0px solid #e9e9ec;
 }
@@ -42,6 +44,7 @@
 	justify-self: start;
 	text-align: start;
 	margin-bottom: 20px;
+	padding-left: 15px;
 }
 
 .dashboard-address button {
@@ -67,19 +70,36 @@
 	grid-auto-rows: minmax(310px, auto);
 }
 
+.remove-order-button {
+	display: grid;
+	justify-items: end;
+}
+
+.remove-order-button button {
+	background-color: transparent;
+	border: 1px solid rgb(243, 79, 79);
+	border-radius: 12px;
+	color: rgb(243, 79, 79);
+	height: 40px;
+	width: 100px;
+}
+
 .dashboard-orders h3 {
 	text-align: start;
+	padding-left: 15px;
 }
 
 .order-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	border-radius: 18px;
+	grid-gap: 15px;
 	border: 2px solid rgb(238, 238, 238);
 }
 
 .order-product {
-	height: 100%;
+	width: 300px;
 }
 
 .order-container img {
