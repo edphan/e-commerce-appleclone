@@ -38,6 +38,7 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
 		"redux-persist": "^6.0.0",
-		"serve": "^11.3.2"
+		"serve": "^11.3.2",
+		"stripe": "^8.149.0"
 	}
 }
