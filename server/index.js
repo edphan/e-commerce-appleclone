@@ -19,9 +19,13 @@ require('./config/passport');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// This is your real test secret API key.
+const stripe = require('stripe')('sk_test_51ItQyDLKmuKf5Y8NeeR6LiMdi1XbCrGJKXfEZ0EexdgBagV0N37A8kk0iiVtQFuYqWM7DMlyFF3HyBEEGbkAX64N0022plp1MU');
+
 //MIDDLEWARE
 app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 app.use(cookieParser()); //to parse cookie
+app.use(express.static('.'));
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 
@@ -37,6 +41,26 @@ app.use('/others', othersRouter);
 app.use('/profile', profileRouter);
 app.use('/order', orderRouter);
 app.use('/test', testRouter);
+
+const calculateOrderAmount = (items) => {
+	// Replace this constant with a calculation of the order's amount
+	// Calculate the order total on the server to prevent
+	// people from directly manipulating the amount on the client
+	return 1400;
+};
+
+// STRIPE PAYMENTINTENT
+app.post('/create-payment-intent', async (req, res) => {
+	const { items } = req.body;
+	// Create a PaymentIntent with the order amount and currency
+	const paymentIntent = await stripe.paymentIntents.create({
+		amount: calculateOrderAmount(items),
+		currency: 'usd',
+	});
+	res.send({
+		clientSecret: paymentIntent.client_secret,
+	});
+});
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(__dirname + '/../client/build'));
